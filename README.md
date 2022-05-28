@@ -1,2 +1,18 @@
 # CAP4630 Intro to AI
-## Assignment 1
+## Project 1 - AI Games
+### Group Members: Shivani Nanan & Dan Zimmerman 
+
+
+#### Requirements & Dependencies
+- Python 3.8
+- easyAI
+
+
+#### Instructions
+Fork or clone repo, install dependencies, and run
+
+connect-4.py
+and
+tic-tac-toe.py 
+
+in Python 3.8 or higher.

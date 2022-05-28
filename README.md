@@ -11,8 +11,8 @@
 #### Instructions
 Fork or clone repo, install dependencies, and run
 
-connect-4.py
-and
-tic-tac-toe.py 
+connect-4.py <br>
+tic-tac-toe.py <br>
+checker_questions.py
 
 in Python 3.8 or higher.

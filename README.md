@@ -9,10 +9,11 @@
 
 
 #### Instructions
-Fork or clone repo, install dependencies, and run
+Fork or clone repo, install dependencies, and run:
 
-connect-4.py <br>
-tic-tac-toe.py <br>
-checker_questions.py
+- checker_questions.py <br>
+- connect-4.py <br>
+- tic-tac-toe.py 
+
 
 in Python 3.8 or higher.

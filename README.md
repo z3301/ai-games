@@ -4,8 +4,13 @@
 
 
 #### Requirements & Dependencies
-- Python 3.8
-- easyAI
+- certifi==2022.5.18.1
+- easyAI==2.0.12
+- numpy==1.22.4
+- pip==21.2.2
+- setuptools==61.2.0
+- wheel==0.37.1
+- wincertstore==0.2  
 
 
 #### Instructions

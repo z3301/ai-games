@@ -48,13 +48,13 @@ class Checker(TwoPlayerGame):
         table_pos = []
         old_new_piece_pos = []
 
-        # board position before move
+        # board position before move 
         board = self.blank_board.copy()
         for (p,l) in zip(self.players, ["W", "B"]):
             for x,y in p.pos:
                 board[x,y] = l
 
-        # get legal move of each pieces. (old piece location, new piece location)
+        # get legal moves of each pieces. (old piece location, new piece location)
         # get position of each move (list of all table position)
         for v in self.players[self.current_player-1].pos:
             old_piece_pos = v

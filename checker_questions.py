@@ -176,7 +176,6 @@ class Checker(TwoPlayerGame):
          [W,0,W,0,W,0,W,0]]
         ------
         """
-        #self.board[int(move)-1] = self.current_player
         self.players[self.current_player - 1].pos = self.get_piece_pos_from_table(pos)
         self.board = pos
 
@@ -203,7 +202,11 @@ class Checker(TwoPlayerGame):
         """
         game is over immediately when one player get one of its piece into opponent's territory.
         """
-        return (self.possible_moves() == []) or self.lose()
+        if self.lose():
+            print(self.won, "wins!")
+            return True
+        else:
+            return (self.possible_moves() == [])
 
     def show(self):
         """

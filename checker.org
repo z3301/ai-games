@@ -1,4 +1,40 @@
-# [[file:checker.org::*questions][questions:1]]
+#+TITLE: Checker
+
+* game rules
+:PROPERTIES:
+:ID:       f47d700d-13d5-4c30-ad78-8ff194863eca
+:END:
+
+position rules
+- [X] pieces are only on black square.
+- [X] only 1 piece can stay in black square.
+
+game initialization rule
+- [X] 2 players game
+- [X] player are either black or white
+- [X] black player initalization rows are 0,1
+- [X] white player initalization rows are 6,7
+- [X] pieces of players initalization rows must fill all valid position.
+
+territory rules
+- [X] territory of black player is 0
+- [X] territory of white player is 7
+
+move rules
+- [X] piece must be on the board after execute a move
+- [X] one player can move 1 piece per turn.
+- [X] piece have 2 type of moves: step or jump.
+- [X] piece can only be moved if its position after move is not invalid.
+- [X] piece step when no other piece is within (+-1, +1).
+- [X] piece jump over other piece to (+-2,+2) when the piece is within (+ -1, +1) of other pieces.
+- [X] when a piece jump over opponent piece, opponent piece is not removed.
+
+termination rules
+- [X] first player who has a king win immediately
+
+* questions
+Fill out the following method make_move(), loss(), is_over(), and scoring()
+#+BEGIN_SRC python :tangle "~/Scratches/Examples/Libraries/EasyAI/checker_questions.py" :comments link
 # !/usr/bin/env python3
 from easyAI import TwoPlayerGame, Human_Player, AI_Player, Negamax
 from easyAI import solve_with_iterative_deepening
@@ -163,9 +199,11 @@ class Checker(TwoPlayerGame):
     def make_move(self, pos):
         """
         assign pieces index of pos array to current player position.
+
         parameters
         -------
         pos = position of all pieces on the (8 x 8) boards. type numpy array.
+
         example of pos
         [[0,B,0,B,0,B,0,B],
          [B,0,B,0,B,0,B,0],
@@ -176,36 +214,20 @@ class Checker(TwoPlayerGame):
          [W,0,W,0,W,0,W,0]]
         ------
         """
-
-        self.players[self.current_player - 1].pos = self.get_piece_pos_from_table(pos)
-        self.board = pos
+        pass
 
     def lose(self):
         """
         black lose if white piece is in black territory
-        white lose if black piece is in white territory
+        white lose if black piece is in black territory
         """
-        for piece in self.players[1].pos:
-            for whitearea in self.white_territory:
-                if piece == whitearea:
-                    self.won = "Black"
-                    return True
-
-        for piece in self.players[0].pos:
-            for blackarea in self.black_territory:
-                if piece == blackarea:
-                    self.won = "White"
-                    return True
-
-        return False
+        pass
 
     def is_over(self):
         """
         game is over immediately when one player get one of its piece into opponent's territory.
         """
-        if self.lose():
-            print(self.won, "won")
-            return True
+        pass
 
     def show(self):
         """
@@ -216,21 +238,21 @@ class Checker(TwoPlayerGame):
         board = self.blank_board.copy()
         print(f"player 1 positions = {self.players[0].pos}")
         print(f"player 2 positions = {self.players[1].pos}")
-        for (p, l) in zip(self.players, ["W", "B"]):
-            for x, y in p.pos:
-                board[x, y] = l
+        for (p,l) in zip(self.players, ["W", "B"]):
+            for x,y in p.pos:
+                board[x,y] = l
         print('\n')
         print(board)
 
     def scoring(self):
-        """
-        win = 0
-        lose = -100
-        """
-        return -100 if self.lose() else 0
+       """
+       win = 0
+       lose = -100
+       """
+       pass
 
 if __name__ == "__main__":
     ai = Negamax(1) # The AI will think 13 moves in advance
     game = Checker( [ AI_Player(ai), AI_Player(ai) ] )
     history = game.play()
-# questions:1 ends here
+#+END_SRC

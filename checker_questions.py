@@ -187,13 +187,13 @@ class Checker(TwoPlayerGame):
         for piece in self.players[1].pos:
             for whitearea in self.white_territory:
                 if piece == whitearea:
-                    self.won = "Black"
+                    self.won = "black"
                     return True
 
         for piece in self.players[0].pos:
             for blackarea in self.black_territory:
                 if piece == blackarea:
-                    self.won = "White"
+                    self.won = "white"
                     return True
 
         return False

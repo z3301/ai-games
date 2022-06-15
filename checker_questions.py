@@ -201,7 +201,7 @@ class Checker(TwoPlayerGame):
     def is_over(self):
         """
         game is over immediately when one player get one of its piece into opponent's territory.
-        """
+        """ 
         if self.lose():
             print(self.won, "wins!")
             return True

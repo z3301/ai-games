@@ -1,5 +1,10 @@
 # [[file:checker.org::*questions][questions:1]]
 # !/usr/bin/env python3
+#Dan Zimmerman 
+#Shivani Nanan 
+#CAP4630 Intro to Artificial Intelligence 
+#Summer 2022 Semester 
+#Project 1 - Game playing using easyAI
 from easyAI import TwoPlayerGame, Human_Player, AI_Player, Negamax
 from easyAI import solve_with_iterative_deepening
 import numpy as np
@@ -48,13 +53,13 @@ class Checker(TwoPlayerGame):
         table_pos = []
         old_new_piece_pos = []
 
-        # board position before move 
+        # board position before the move 
         board = self.blank_board.copy()
         for (p,l) in zip(self.players, ["W", "B"]):
             for x,y in p.pos:
                 board[x,y] = l
 
-        # get legal moves of each pieces. (old piece location, new piece location)
+        # get the legal moves of each piece. (old piece location, new piece location)
         # get position of each move (list of all table position)
         for v in self.players[self.current_player-1].pos:
             old_piece_pos = v
@@ -79,7 +84,7 @@ class Checker(TwoPlayerGame):
                     else:
                         old_new_piece_pos.append((old_piece_pos,n))
 
-        # board position after  move
+        # board position after move
         for i,j in old_new_piece_pos:
             print(f"i = {i}")
             b = board.copy()
@@ -103,14 +108,14 @@ class Checker(TwoPlayerGame):
             for x,y in p.pos:
                 board[x,y] = l
 
-        # get legal move of each pieces. (old piece location, new piece location)
-        # get position of each move (list of all table position)
+        # get the legal move of each piece. (old piece location, new piece location)
+        # get the position of each move (list of all table position)
         for v in self.players[self.current_player-1].pos:
             old_piece_pos = v
 
             step_pos = [(v[0]+1, v[1]-1), (v[0]+1, v[1]+1)]
             # if no piece at step_pos, step
-            # otherwise jump until no piece at next step_pos
+            # otherwise jump until there is no pieces at next step_pos
             for n in step_pos:
                 if (n[0] >= 0 and n[0] <= 7) and (n[1] >= 0 and n[1] <= 7) and (n in black_squares):
                     if board[n[0], n[1]] in ["B","W"]:
@@ -128,7 +133,7 @@ class Checker(TwoPlayerGame):
                     else:
                         old_new_piece_pos.append((old_piece_pos,n))
 
-        # board position after  move
+        # board position after the move.
 
         for i,j in old_new_piece_pos:
             b = board.copy()
@@ -176,8 +181,14 @@ class Checker(TwoPlayerGame):
          [W,0,W,0,W,0,W,0]]
         ------
         """
+<<<<<<< HEAD
         # uses pos numpy array and get_piece_pos_from_table() function to set
         self.players[self.current_player - 1].pos = self.get_piece_pos_from_table(pos) 
+=======
+        #self.board[int(move)-1] = self.current_player
+        self.players[self.current_player - 1].pos = self.get_piece_pos_from_table(pos)
+        self.board = pos
+>>>>>>> 92cbded60992d1f2040296258601f99318e50925
 
     def lose(self):
         """
@@ -187,13 +198,13 @@ class Checker(TwoPlayerGame):
         for piece in self.players[1].pos:
             for whitearea in self.white_territory:
                 if piece == whitearea:
-                    self.won = "black"
+                    self.won = "Black"
                     return True
 
         for piece in self.players[0].pos:
             for blackarea in self.black_territory:
                 if piece == blackarea:
-                    self.won = "white"
+                    self.won = "White"
                     return True
 
         return False
@@ -201,19 +212,15 @@ class Checker(TwoPlayerGame):
     def is_over(self):
         """
         game is over immediately when one player get one of its piece into opponent's territory.
-        """ 
-        if self.lose():
-            print(self.won, "wins!")
-            return True
-        else:
-            return (self.possible_moves() == [])
+        """
+        return (self.possible_moves() == []) or self.lose()
 
     def show(self):
         """
         show 8*8 checker board.
         """
 
-        # board position before move
+        # board position before the move
         board = self.blank_board.copy()
         print(f"player 1 positions = {self.players[0].pos}")
         print(f"player 2 positions = {self.players[1].pos}")

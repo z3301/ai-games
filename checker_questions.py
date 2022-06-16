@@ -181,14 +181,8 @@ class Checker(TwoPlayerGame):
          [W,0,W,0,W,0,W,0]]
         ------
         """
-<<<<<<< HEAD
         # uses pos numpy array and get_piece_pos_from_table() function to set
         self.players[self.current_player - 1].pos = self.get_piece_pos_from_table(pos) 
-=======
-        #self.board[int(move)-1] = self.current_player
-        self.players[self.current_player - 1].pos = self.get_piece_pos_from_table(pos)
-        self.board = pos
->>>>>>> 92cbded60992d1f2040296258601f99318e50925
 
     def lose(self):
         """

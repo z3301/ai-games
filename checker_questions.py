@@ -3,7 +3,7 @@
 #Dan Zimmerman 
 #Shivani Nanan 
 #CAP4630 Intro to Artificial Intelligence 
-#Summer 2022
+#Summer 2022 Semester 
 #Project 1 - EasyAI 
 from easyAI import TwoPlayerGame, Human_Player, AI_Player, Negamax
 from easyAI import solve_with_iterative_deepening

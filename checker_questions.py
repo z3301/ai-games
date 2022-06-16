@@ -176,8 +176,8 @@ class Checker(TwoPlayerGame):
          [W,0,W,0,W,0,W,0]]
         ------
         """
-        self.players[self.current_player - 1].pos = self.get_piece_pos_from_table(pos)
-        self.board = pos
+        # uses pos numpy array and get_piece_pos_from_table() function to set
+        self.players[self.current_player - 1].pos = self.get_piece_pos_from_table(pos) 
 
     def lose(self):
         """
@@ -234,4 +234,4 @@ if __name__ == "__main__":
     ai = Negamax(1) # The AI will think 13 moves in advance
     game = Checker( [ AI_Player(ai), AI_Player(ai) ] )
     history = game.play()
-# questions:1 ends here
+# questions:1 ends here 

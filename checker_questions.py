@@ -22,6 +22,7 @@ black_squares = even_row + odd_row
 class Checker(TwoPlayerGame):
 
     def __init__(self, players):
+        print("Address of self = ", id(self))
         self.players = players
         # self.board = np.arange(8 * 8).reshape(8,8)
         self.blank_board = np.zeros((8,8), dtype=object)
@@ -165,7 +166,7 @@ class Checker(TwoPlayerGame):
         assert len(np.where(table_pos != 0)[0]) == 16, f"In get_piece_pos_from_table(), there are {len(np.where(table_pos != 0)[0])} pieces on the board  \n {table_pos}"
         return [(i,j) for i,j in zip(x[0], x[1])]
 
-    def make_move(self, pos):
+    def make_move(self, pos): # takes game instance and position of all pieces on the board
         """
         assign pieces index of pos array to current player position.
         parameters
@@ -184,7 +185,7 @@ class Checker(TwoPlayerGame):
         # uses pos numpy array and get_piece_pos_from_table() function to set
         self.players[self.current_player - 1].pos = self.get_piece_pos_from_table(pos) 
 
-    def lose(self):
+    def lose(self): # takes game instance 
         """
         black lose if white piece is in black territory
         white lose if black piece is in white territory
@@ -207,7 +208,7 @@ class Checker(TwoPlayerGame):
 
         return False
 
-    def is_over(self):
+    def is_over(self): # takes game instance 
         """
         game is over immediately when one player get one of its piece into opponent's territory.
         """
@@ -216,6 +217,7 @@ class Checker(TwoPlayerGame):
             print(self.won, "wins!")
             return True
         else:
+            print("possible moves: ", self.possible_moves() == [])
             return (self.possible_moves() == [])
 
     def show(self):
@@ -233,7 +235,7 @@ class Checker(TwoPlayerGame):
         print('\n')
         print(board)
 
-    def scoring(self):
+    def scoring(self): # takes game instance
         """
         win = 0
         lose = -100

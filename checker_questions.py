@@ -217,7 +217,6 @@ class Checker(TwoPlayerGame):
             print(self.won, "wins!")
             return True
         else:
-            print("possible moves: ", self.possible_moves() == [])
             return (self.possible_moves() == [])
 
     def show(self):

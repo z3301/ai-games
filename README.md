@@ -26,7 +26,3 @@ Also available in this repository are the original, unaltered Connect 4 and Tic-
 
 - connect-4.py
 - tic-tac-toe.py
-
-
-
-

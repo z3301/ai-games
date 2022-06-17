@@ -4,9 +4,9 @@
 
 
 #### Requirements & Dependencies
-easyAI==2.0.12
-numpy==1.22.4
-pytest==7.1.2
+- easyAI==2.0.12
+- numpy==1.22.4
+- pytest==7.1.2
 
 
 #### Instructions

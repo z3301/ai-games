@@ -1,16 +1,15 @@
 # CAP4630 Intro to Artificial Intelligence
 ## Project 1 - AI Games
-### Group Members: Shivani Nanan & Dan Zimmerman 
+## Group Members: Shivani Nanan & Dan Zimmerman 
 
-
-#### Requirements & Dependencies
+### Requirements & Dependencies
 - easyAI==2.0.12
 - numpy==1.22.4
 - pytest==7.1.2
 
 Note that pytest is only required for running the test file using `pytest test_checker.py`
 
-#### Instructions
+### Instructions
 1. Clone this repo.
 
 2. Install dependencies using `pip3 install -r requirements.txt`

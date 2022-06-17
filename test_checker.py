@@ -1,5 +1,5 @@
 from easyAI import Human_Player, AI_Player, Negamax
-from checker_questions import Checker, black_squares
+from p1_dzimmerman2021 import Checker, black_squares
 import pytest
 import numpy as np
 

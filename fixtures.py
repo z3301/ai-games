@@ -1,5 +1,5 @@
 import pytest
-from checker_questions import Checker
+from p1_dzimmerman2021 import Checker
 from easyAI import Human_Player, AI_Player, Negamax
 
 @pytest.fixture

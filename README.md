@@ -8,13 +8,22 @@
 - numpy==1.22.4
 - pytest==7.1.2
 
+Note that pytest is only required for running the test file "test_checker.py"
 
 #### Instructions
 Clone repo, install dependencies, and run:
 
-- checker_questions.py
+- p1_dzimmerman2021.py
+
+in Python 3.8 or higher. 
+
+<br><br>
+
+Also available in this repository are the original, unaltered Connect 4 and Tic-Tac-Toe files:
+
 - connect-4.py
 - tic-tac-toe.py 
 
 
-in Python 3.8 or higher.
+
+

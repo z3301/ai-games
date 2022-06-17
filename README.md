@@ -1,4 +1,4 @@
-# CAP4630 Intro to AI
+# CAP4630 Intro to Artificial Intelligence
 ## Project 1 - AI Games
 ### Group Members: Shivani Nanan & Dan Zimmerman 
 

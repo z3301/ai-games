@@ -8,21 +8,25 @@
 - numpy==1.22.4
 - pytest==7.1.2
 
-Note that pytest is only required for running the test file "test_checker.py"
+Note that pytest is only required for running the test file `test_checker.py`
 
 #### Instructions
-Clone repo, install dependencies, and run:
+1. Clone this repo.
 
-- p1_dzimmerman2021.py
+2. Install dependencies using `pip3 install -r requirements.txt`
 
-in Python 3.8 or higher. 
+3. Run the project file:
 
-<br><br>
+- `p1_dzimmerman2021.py`
+
+in Python 3.8 or higher using `python3 p1_dzimmerman2021.py` 
+
+<br>
 
 Also available in this repository are the original, unaltered Connect 4 and Tic-Tac-Toe files:
 
-- connect-4.py
-- tic-tac-toe.py 
+- `connect-4.py`
+- `tic-tac-toe.py`
 
 
 
